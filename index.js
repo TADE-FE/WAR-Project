@@ -12,9 +12,9 @@ function shuffle(array) {
     }
 }
 
-//pass rank, suits through shuffle function
- shuffle(ranks);
- shuffle(suits);
+//pass rank, suits through shuffle function (not needed)
+// shuffle(ranks);
+ //shuffle(suits);
 
 
  //init deck array to hold cards in deck. nested loop iterate each combination of rank/suit and push to deck
@@ -24,6 +24,8 @@ for (let suit of suits) {
         deck.push({rank, suit});
     }
 }
+
+shuffle(deck)
 
 //slice first 26 cards from deck array, "deal" to players 1,2 hand
 const player1Hand = deck.slice(0,26);
@@ -74,9 +76,10 @@ console.log(`Second player score: ${player2Score}`);
 function winner(){
     if (player1Score > player2Score){
         console.log("First player wins!")
-    } else if (player2Score > player1Score) {
+    } else if (player1Score < player2Score) {
         console.log ("Second player wins!")
     } else {
         console.log("It is a tie!")
     }
 }
+winner()
